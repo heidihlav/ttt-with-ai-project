@@ -41,6 +41,7 @@ describe "Board" do
       output = capture_puts{ board.display }
 
       expect(output).to include(" X | X | X ")
+
       expect(output).to include("-----------")
       expect(output).to include(" X | O | O ")
       expect(output).to include("-----------")
@@ -62,7 +63,6 @@ describe "Board" do
   describe '#position' do
     it 'takes in user input and returns the value of the board cell' do
       board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
-
       expect(board.position("1")).to eq("O")
       expect(board.position("2")).to eq(" ")
       expect(board.position("5")).to eq("X")
